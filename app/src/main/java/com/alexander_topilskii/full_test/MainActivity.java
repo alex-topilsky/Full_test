@@ -6,16 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.alexander_topilskii.full_test.Logging.LogShower;
-import com.alexander_topilskii.full_test.Logging.MyLogger;
+import com.alexander_topilskii.full_test.lifecycle.MyBroadcastReceiver;
+import com.alexander_topilskii.full_test.lifecycle.MyBroadcastService;
+import com.alexander_topilskii.full_test.logging.LogShower;
+import com.alexander_topilskii.full_test.logging.MyLogger;
 import com.alexander_topilskii.full_test.lifecycle.MyActivity1;
 import com.alexander_topilskii.full_test.lifecycle.MyActivity2;
 import com.alexander_topilskii.full_test.lifecycle.MyService;
 
 public class MainActivity extends AppCompatActivity {
-    public final static String PARAM_TIME = "time";
-    public final static String PARAM_TASK = "task";
-    final int TASK1_CODE = 1;
 
     Button goToLogBtn;
     Button goToLifecycle1Btn;
@@ -35,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         startServiceBtn = (Button) findViewById(R.id.start_service);
         stopServiceBtn = (Button) findViewById(R.id.stop_service);
         sendBroadcast = (Button) findViewById(R.id.sendBroadcast);
+
+        startService(new Intent(MainActivity.this, MyBroadcastService.class));
+        //registerReceiver(new MyBroadcastReceiver(), filter);
 
         goToLifecycle1Btn.setOnClickListener(new View.OnClickListener() {
             @Override

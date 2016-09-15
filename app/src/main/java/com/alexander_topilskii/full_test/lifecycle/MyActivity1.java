@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.alexander_topilskii.full_test.Logging.MyLogger;
+import com.alexander_topilskii.full_test.logging.MyLogger;
 import com.alexander_topilskii.full_test.MainActivity;
 import com.alexander_topilskii.full_test.R;
 

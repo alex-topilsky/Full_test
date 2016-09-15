@@ -1,4 +1,4 @@
-package com.alexander_topilskii.full_test.Logging;
+package com.alexander_topilskii.full_test.logging;
 
 import android.os.Environment;
 import android.text.format.Time;
@@ -24,7 +24,12 @@ public class MyLogger {
 
     static public void log(final Object obj, final String text, String level) {
         time.setToNow();
-        String TAG = level + " " + time.hour + ":" + time.minute + ":" + time.second + " " + obj.getClass().getSimpleName();
+        String TAG;
+        if (obj instanceof String) {
+            TAG = level + " " + time.hour + ":" + time.minute + ":" + time.second + " " + obj;
+        } else {
+            TAG = level + " " + time.hour + ":" + time.minute + ":" + time.second + " " + obj.getClass().getSimpleName();
+        }
         saveHistory(TAG, text);
 
         if (level.contains("v")) logv(TAG, text);
@@ -65,6 +70,13 @@ public class MyLogger {
 
     public static void clearHistory() {
         logHistory = new StringBuilder();
+        clearFileLog();
+    }
+
+    private static void clearFileLog() {
+        String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/myLog.txt";
+        File logFile = new File(path);
+        logFile.delete();
     }
 
     private static void appendLog(String text) {

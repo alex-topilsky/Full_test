@@ -7,7 +7,7 @@ import android.content.res.Configuration;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.alexander_topilskii.full_test.Logging.MyLogger;
+import com.alexander_topilskii.full_test.logging.MyLogger;
 
 public class MyService extends Service{
     @Override

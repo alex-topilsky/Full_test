@@ -1,4 +1,4 @@
-package com.alexander_topilskii.full_test.Logging;
+package com.alexander_topilskii.full_test.logging;
 
 import android.app.Activity;
 import android.content.Intent;

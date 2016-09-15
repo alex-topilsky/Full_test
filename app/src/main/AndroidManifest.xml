@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alexander_topilskii.full_test">
+    package="com.alexander_topilskii.full_test"
+    android:installLocation="auto">
 
-    <uses-permission android:name="ACTION_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="ACTION_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -20,21 +21,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".lifecycle.MyActivity1"/>
-        <activity android:name=".lifecycle.MyActivity2"/>
-        <activity android:name=".Logging.LogShower"/>
+        <activity android:name=".lifecycle.MyActivity1" />
+        <activity android:name=".lifecycle.MyActivity2" />
+        <activity android:name=".logging.LogShower" />
 
-        <service android:name=".lifecycle.MyService"/>
-        <receiver android:name=".lifecycle.MyBroadcastReceiver" android:enabled="true">
+        <service android:name=".lifecycle.MyService" />
+        <service android:name=".lifecycle.MyBroadcastService" />
+        <receiver android:name=".lifecycle.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.net.conn.RECEIVE_BOOT_COMPLETED" />
-                <action android:name="android.net.conn.ACTION_TIME_CHANGED" />
-                <action android:name="android.net.conn.ACTION_CAMERA_BUTTON" />
-                <action android:name="android.net.conn.ACTION_SCREEN_OFF" />
-                <action android:name="android.net.conn.ACTiON_SCREEN_ON" />
-                <action android:name="android.net.conn.ACTION_TIMEZONE_CHANGED" />
-                <action android:name="TOPILSKII_INTENT"/>
-                <action android:name="android.net.conn.WIFI_STATE_CHANGED" />
+                <action android:name="TOPILSKII_INTENT" />
+                <action android:name="android.intent.action.SCREEN_ON"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
             </intent-filter>
         </receiver>
     </application>
