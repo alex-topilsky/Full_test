@@ -17,7 +17,7 @@ public class MyActivity2 extends MyActivity1 {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_activity);
+        setContentView(R.layout.my_activity2);
         goToMainBtn = (Button) findViewById(R.id.goToMainFromMyActivity);
         log = (TextView) findViewById(R.id.activity2_log);
         log.setMovementMethod(new ScrollingMovementMethod());

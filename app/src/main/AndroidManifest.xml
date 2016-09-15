@@ -33,6 +33,7 @@
                 <action android:name="android.net.conn.ACTION_SCREEN_OFF" />
                 <action android:name="android.net.conn.ACTiON_SCREEN_ON" />
                 <action android:name="android.net.conn.ACTION_TIMEZONE_CHANGED" />
+                <action android:name="TOPILSKII_INTENT"/>
                 <action android:name="android.net.conn.WIFI_STATE_CHANGED" />
             </intent-filter>
         </receiver>
