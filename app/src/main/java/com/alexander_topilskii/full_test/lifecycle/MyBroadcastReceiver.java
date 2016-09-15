@@ -14,7 +14,6 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
     public MyBroadcastReceiver() {
         super();
-
     }
 
     @Override
@@ -22,8 +21,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         MyLogger.log(this, "onReceive" + intent.toString());
 
         int type = intent.getIntExtra(TYPE, ID_ACTION_STOP);
-        switch (type)
-        {
+        switch (type) {
             case ID_ACTION_PLAY:
                 context.startService(new Intent(context, TextView.class));
                 break;
