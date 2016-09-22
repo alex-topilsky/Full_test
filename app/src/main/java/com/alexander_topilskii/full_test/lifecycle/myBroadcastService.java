@@ -10,12 +10,13 @@ import android.support.annotation.Nullable;
 import com.alexander_topilskii.full_test.logging.MyLogger;
 
 public class MyBroadcastService extends Service {
+    BroadcastReceiver myBrodcast;
     @Override
     public void onCreate() {
         super.onCreate();
         MyLogger.log(this, "onCreate");
 
-        BroadcastReceiver myBrodcast = new BroadcastReceiver() {
+        myBrodcast=  new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 MyLogger.log("BroadcastReceiver", "onReceive" + " " + intent.getAction());
@@ -36,13 +37,21 @@ public class MyBroadcastService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        //super.onStartCommand(intent, flags, startId);
-        return START_REDELIVER_INTENT;
+        MyLogger.log(this, "onStartCommand");
+
+        return START_STICKY;
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         MyLogger.log(this, "onDestroy");
+        unregisterReceiver(myBrodcast);
+    }
+
+    @Override
+    public void onRebind(Intent intent) {
+        super.onRebind(intent);
+        MyLogger.log(this, "onRebind");
     }
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/tvTop"
+        android:gravity="top|center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dip"
+        android:text="FLOATING VIEW - TOP"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:background="#FFFFFF" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/lvMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -3,6 +3,7 @@ package com.alexander_topilskii.full_test.logging;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 import com.alexander_topilskii.full_test.MainActivity;
 import com.alexander_topilskii.full_test.R;
 
-public class LogShower extends Activity {
+public class LogShower extends FragmentActivity {
     Button goToMainBtn;
     Button clearBtn;
     TextView textHistory;
@@ -20,6 +21,7 @@ public class LogShower extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_shower);
+
         goToMainBtn = (Button) findViewById(R.id.goToMain);
         clearBtn = (Button) findViewById(R.id.clear);
         textHistory = (TextView) findViewById(R.id.textView);

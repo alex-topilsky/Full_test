@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.alexander_topilskii.full_test.lifecycle.MyBroadcastReceiver;
+import com.alexander_topilskii.full_test.fragments.MainFragmentsActivity;
+import com.alexander_topilskii.full_test.lifecycle.MyFragmentActivity;
 import com.alexander_topilskii.full_test.lifecycle.MyBroadcastService;
 import com.alexander_topilskii.full_test.logging.LogShower;
 import com.alexander_topilskii.full_test.logging.MyLogger;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     Button stopServiceBtn;
     Button startServiceBtn;
     Button sendBroadcast;
+    Button goToFragmentActivity;
+    Button goToFragmentsActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         startServiceBtn = (Button) findViewById(R.id.start_service);
         stopServiceBtn = (Button) findViewById(R.id.stop_service);
         sendBroadcast = (Button) findViewById(R.id.sendBroadcast);
+        goToFragmentActivity = (Button) findViewById(R.id.fragment_activity);
+        goToFragmentsActivity = (Button) findViewById(R.id.fragments_activity);
 
         startService(new Intent(MainActivity.this, MyBroadcastService.class));
         //registerReceiver(new MyBroadcastReceiver(), filter);
@@ -80,6 +85,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction("TOPILSKII_INTENT");
                 sendBroadcast(intent);
+            }
+        });
+
+        goToFragmentActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MyFragmentActivity.class));
+            }
+        });
+
+        goToFragmentsActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MainFragmentsActivity.class));
             }
         });
     }

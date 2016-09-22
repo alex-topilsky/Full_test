@@ -84,4 +84,7 @@ public class MyActivity1 extends Activity {
         log.setText("");
         log.setText(MyLogger.getLogHistory());
     }
+
+
+
 }

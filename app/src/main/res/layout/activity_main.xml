@@ -56,4 +56,15 @@
         android:text="Send broadcast"
         android:id="@+id/sendBroadcast"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send open activity with fragment"
+        android:id="@+id/fragment_activity"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Fragments activity"
+        android:id="@+id/fragments_activity"/>
 </LinearLayout>

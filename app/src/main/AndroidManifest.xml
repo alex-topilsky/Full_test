@@ -23,7 +23,9 @@
 
         <activity android:name=".lifecycle.MyActivity1" />
         <activity android:name=".lifecycle.MyActivity2" />
+        <activity android:name=".lifecycle.MyFragmentActivity" />
         <activity android:name=".logging.LogShower" />
+        <activity android:name=".fragments.MainFragmentsActivity" />
 
         <service android:name=".lifecycle.MyService" />
         <service android:name=".lifecycle.MyBroadcastService" />
