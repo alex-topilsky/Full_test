@@ -34,4 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Open files" />
+
+    <Button
+        android:id="@+id/work_services"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to Services" />
 </LinearLayout>

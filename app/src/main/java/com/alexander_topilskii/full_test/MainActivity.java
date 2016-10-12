@@ -16,6 +16,7 @@ import com.alexander_topilskii.full_test.lifecycle.MyActivity1;
 import com.alexander_topilskii.full_test.lifecycle.MyActivity2;
 import com.alexander_topilskii.full_test.lifecycle.MyService;
 import com.alexander_topilskii.full_test.recycleCardView.CardViewMain;
+import com.alexander_topilskii.full_test.services.ServicesMain;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button goToCardViewActivity;
     Button goToFileActivity;
+    Button goToServicesActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         goToCardViewActivity = (Button) findViewById(R.id.cardview_open_activity);
         goToFileActivity = (Button) findViewById(R.id.work_with_file);
         goToLifeCycleBtn = (Button) findViewById(R.id.lifcycle_activity_btn);
+        goToServicesActivity = (Button) findViewById(R.id.work_services);
 
         startService(new Intent(MainActivity.this, MyBroadcastService.class));
         //registerReceiver(new MyBroadcastReceiver(), filter);
@@ -66,6 +69,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, WorkWithFiles.class));
+            }
+        });
+
+        goToServicesActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ServicesMain.class));
             }
         });
     }
