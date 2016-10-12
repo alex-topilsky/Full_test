@@ -26,6 +26,9 @@
         <activity android:name=".lifecycle.MyFragmentActivity" />
         <activity android:name=".logging.LogShower" />
         <activity android:name=".fragments.MainFragmentsActivity" />
+        <activity android:name=".recycleCardView.CardViewMain" />
+        <activity android:name=".lifecycle.LifeCycleMainActivity" />
+        <activity android:name=".WorkWithFiles" />
 
         <service android:name=".lifecycle.MyService" />
         <service android:name=".lifecycle.MyBroadcastService" />
